@@ -4,7 +4,7 @@ import axios from 'axios';
 let headers = {};
 
 const axiosInstance = axios.create({
-  baseURL: "https://dummyjson.com/products",
+  baseURL: "https://dummyjson.com",
   headers,
 });
 
@@ -18,11 +18,9 @@ axiosInstance.interceptors.request.use(
     } else {
       config.headers.Authorization = '';
     }
-    // console.log('config', config)
     return config;
   },
   error => {
-    // console.log('error', error)
     return Promise.reject(error);
   },
 );
